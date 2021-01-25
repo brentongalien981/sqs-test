@@ -23,6 +23,7 @@
     <body class="antialiased">
 
     <h2>PROJECT: sqs-test</h2>
+    <h3>bet, shii</h3>
 
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
             @if (Route::has('login'))
