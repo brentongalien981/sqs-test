@@ -16,6 +16,12 @@ use App\Http\Controllers\TestController;
 
 
 
+Route::get('/route-for-qw1', function () {
+    return "ROUTE: route-for-qw1";
+});
+
+
+
 Route::get('/test/create-user', [TestController::class, 'createUser']);
 
 
