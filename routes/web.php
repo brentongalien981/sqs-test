@@ -22,6 +22,8 @@ Route::get('/route-for-qw1', function () {
 
 
 
+// ?name=vanessa&email=vanessa@lakers.com&password=vanessa123
+Route::get('/test/delay-create-user', [TestController::class, 'DelayCreateUser']);
 Route::get('/test/create-user', [TestController::class, 'createUser']);
 
 
