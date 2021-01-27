@@ -24,13 +24,13 @@ class TestController extends Controller
         $userData['email'] = $request->email;
         $userData['password'] = $request->password;
 
-        AddUser::dispatch($userData)->onQueue('QOrders');
+        AddUser::dispatch($userData)->onQueue('QOrders.fifo');
 
         return [
             'name' => $request->name,
             'email' => $request->email,
             'password' => $request->password,
-            'msg' => 'JOB: AddUser dispatched on queue: QOrders...'
+            'msg' => 'JOB: AddUser dispatched on queue: QOrders.fifo...'
         ];
     }
 
