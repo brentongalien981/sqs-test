@@ -13,20 +13,18 @@ class TestController extends Controller
     {
         ProcessPodcast::dispatch(1);
 
-        return "job dispatched!";
+        return "job dispatched yo!";
     }
 
 
 
     public function delayCreateUser(Request $request)
     {
+        $userData['name'] = $request->name;
+        $userData['email'] = $request->email;
+        $userData['password'] = $request->password;
 
-        $u = new User();
-        $u->name = $request->name;
-        $u->email = $request->email;
-        $u->password = $request->password;
-
-        AddUser::dispatch($u);
+        AddUser::dispatch($userData);
 
         return [
             'name' => $request->name,

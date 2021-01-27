@@ -15,16 +15,16 @@ class AddUser implements ShouldQueue
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
 
-    protected $user;
+    protected $userData;
 
     /**
      * Create a new job instance.
      *
      * @return void
      */
-    public function __construct(User $user)
+    public function __construct($userData)
     {
-        $this->user = $user;
+        $this->userData = $userData;
     }
 
     /**
@@ -34,6 +34,10 @@ class AddUser implements ShouldQueue
      */
     public function handle()
     {
-        $this->user->save();
+        $user = new User();
+        $user->name = $this->userData['name'];
+        $user->email = $this->userData['email'];
+        $user->password = $this->userData['password'];
+        $user->save();
     }
 }
