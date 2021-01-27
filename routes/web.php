@@ -21,6 +21,7 @@ Route::get('/hello', function () {
         'msg' => 'hello'
     ];
 });
+Route::get('/test/dispatch-on-queue-qorders', [TestController::class, 'dispatchOnQueueQOrders']);
 Route::get('/test/dispatch-queue', [TestController::class, 'dispatchQueue']);
 
 

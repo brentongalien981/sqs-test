@@ -18,6 +18,24 @@ class TestController extends Controller
 
 
 
+    public function dispatchOnQueueQOrders(Request $request)
+    {
+        $userData['name'] = $request->name;
+        $userData['email'] = $request->email;
+        $userData['password'] = $request->password;
+
+        AddUser::dispatch($userData)->onQueue('QOrders');
+
+        return [
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => $request->password,
+            'msg' => 'JOB: AddUser dispatched on queue: QOrders...'
+        ];
+    }
+
+
+
     public function delayCreateUser(Request $request)
     {
         $userData['name'] = $request->name;
