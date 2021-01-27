@@ -16,14 +16,23 @@ use App\Http\Controllers\TestController;
 
 
 
+Route::get('/hello', function () {
+    return [
+        'msg' => 'hello'
+    ];
+});
+Route::get('/test/dispatch-queue', [TestController::class, 'dispatchQueue']);
+
+
+
 Route::get('/route-for-qw1', function () {
     return "ROUTE: route-for-qw1";
 });
 
 
 
-// ?name=vanessa&email=vanessa@lakers.com&password=vanessa123
-Route::get('/test/delay-create-user', [TestController::class, 'DelayCreateUser']);
+// /test/delay-create-user?name=vanessa&email=vanessa@lakers.com&password=vanessa123
+Route::get('/test/delay-create-user', [TestController::class, 'delayCreateUser']);
 Route::get('/test/create-user', [TestController::class, 'createUser']);
 
 

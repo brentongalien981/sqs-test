@@ -3,12 +3,23 @@
 namespace App\Http\Controllers;
 
 use App\Jobs\AddUser;
+use App\Jobs\ProcessPodcast;
 use App\Models\User;
 use Illuminate\Http\Request;
 
 class TestController extends Controller
 {
-    public function DelayCreateUser(Request $request) {
+    public function dispatchQueue()
+    {
+        ProcessPodcast::dispatch(1);
+
+        return "job dispatched!";
+    }
+
+
+
+    public function delayCreateUser(Request $request)
+    {
 
         $u = new User();
         $u->name = $request->name;
@@ -27,7 +38,8 @@ class TestController extends Controller
 
 
 
-    public function createUser(Request $request) {
+    public function createUser(Request $request)
+    {
 
         $u = new User();
         $u->name = $request->name;
