@@ -35,9 +35,9 @@ class AddMultipleUsers implements ShouldQueue
     {
         foreach ($this->multipleUserData as $u) {
             $user = new User();
-            $user->name = $this->u['name'];
-            $user->email = $this->u['email'];
-            $user->password = $this->u['password'];
+            $user->name = $u['name'];
+            $user->email = $u['email'];
+            $user->password = $u['password'];
             $user->save();
         }
     }
