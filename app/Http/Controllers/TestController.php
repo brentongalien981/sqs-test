@@ -18,7 +18,7 @@ class TestController extends Controller
             $multipleUserData[] = [
                 'name' => $name . $i,
                 'email' => $name . $i . '@gmail.com',
-                'passwordd' => $name . $i . '123'
+                'password' => $name . $i . '123'
             ];
         }
 
