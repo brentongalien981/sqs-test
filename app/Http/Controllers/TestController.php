@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Jobs\AddMultipleUsers;
 use App\Jobs\AddUser;
 use App\Jobs\ProcessPodcast;
 use App\Models\User;
@@ -9,10 +10,24 @@ use Illuminate\Http\Request;
 
 class TestController extends Controller
 {
-    public function dispatchMultipleUserIds()
+    public function dispatchMultipleUserIds(Request $request)
     {
+        $name = $request->name;
+        $multipleUserData = [];
+        for ($i=0; $i < 5; $i++) { 
+            $multipleUserData[] = [
+                'name' => $name . $i,
+                'email' => $name . $i . '@gmail.com',
+                'passowrd' => $name . $i . '123'
+            ];
+        }
+
+        AddMultipleUsers::dispatch($multipleUserData);
+
+
         return [
-            'msg' => 'METHOD: dispatchMultipleUserIds()'
+            'msg' => 'METHOD: dispatchMultipleUserIds()',
+            'data' => $multipleUserData
         ];
     }
 
