@@ -16,6 +16,7 @@ use App\Http\Controllers\TestController;
 
 
 
+Route::get('/test/dispatch-multiple-user-ids', [TestController::class, 'dispatchMultipleUserIds']);
 Route::get('/hello', function () {
     return [
         'msg' => 'hello'

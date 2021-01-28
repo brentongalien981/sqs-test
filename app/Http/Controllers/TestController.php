@@ -9,6 +9,15 @@ use Illuminate\Http\Request;
 
 class TestController extends Controller
 {
+    public function dispatchMultipleUserIds()
+    {
+        return [
+            'msg' => 'METHOD: dispatchMultipleUserIds()'
+        ];
+    }
+
+
+
     public function dispatchQueue()
     {
         ProcessPodcast::dispatch(1);
