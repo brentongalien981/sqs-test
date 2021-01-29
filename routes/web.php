@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestController;
+use App\Http\Controllers\TestRedisController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,12 @@ use App\Http\Controllers\TestController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
+
+Route::get('/test-redis/put', [TestRedisController::class, 'put']);
+Route::get('/test-redis/get', [TestRedisController::class, 'get']);
+Route::get('/test-redis/get-connection', [TestRedisController::class, 'getConnection']);
 
 
 

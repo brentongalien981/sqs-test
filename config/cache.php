@@ -79,6 +79,16 @@ return [
             'lock_connection' => 'default',
         ],
 
+        'redisprimary' => [
+            'driver' => 'redis',
+            'connection' => 'primary',
+        ],
+
+        'redisreader' => [
+            'driver' => 'redis',
+            'connection' => 'reader',
+        ],
+
         'dynamodb' => [
             'driver' => 'dynamodb',
             'key' => env('AWS_ACCESS_KEY_ID'),
