@@ -17,6 +17,11 @@ use App\Http\Controllers\TestRedisController;
 
 
 
+Route::get('/nice', function () {
+    return [
+        'msg' => 'nice'
+    ];
+});
 Route::get('/test-redis/put', [TestRedisController::class, 'put']);
 Route::get('/test-redis/get', [TestRedisController::class, 'get']);
 Route::get('/test-redis/get-connection', [TestRedisController::class, 'getConnection']);
