@@ -25,23 +25,23 @@ class TestController extends Controller
         }
 
         
-        $multipleUserData2 = [];
-        for ($i=0; $i < 5; $i++) { 
-            $multipleUserData2[] = [
-                'name' => $name2 . $i,
-                'email' => $name2 . $i . '@gmail.com',
-                'password' => $name2 . $i . '123'
-            ];
-        }
+        // $multipleUserData2 = [];
+        // for ($i=0; $i < 5; $i++) { 
+        //     $multipleUserData2[] = [
+        //         'name' => $name2 . $i,
+        //         'email' => $name2 . $i . '@gmail.com',
+        //         'password' => $name2 . $i . '123'
+        //     ];
+        // }
 
         AddMultipleUsers::dispatch($multipleUserData);
-        AddMultipleUsers::dispatch($multipleUserData2);
+        // AddMultipleUsers::dispatch($multipleUserData2);
 
 
         return [
             'msg' => 'METHOD: dispatchMultipleUserIds()',
             'data' => $multipleUserData,
-            'data2' => $multipleUserData2,
+            // 'data2' => $multipleUserData2,
         ];
     }
 
