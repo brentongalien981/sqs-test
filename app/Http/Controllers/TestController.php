@@ -25,8 +25,9 @@ class TestController extends Controller
         }
 
         
+        $multipleUserData2 = [];
         for ($i=0; $i < 5; $i++) { 
-            $multipleUserData[] = [
+            $multipleUserData2[] = [
                 'name' => $name2 . $i,
                 'email' => $name2 . $i . '@gmail.com',
                 'password' => $name2 . $i . '123'
@@ -34,6 +35,7 @@ class TestController extends Controller
         }
 
         AddMultipleUsers::dispatch($multipleUserData);
+        AddMultipleUsers::dispatch($multipleUserData2);
 
 
         return [
