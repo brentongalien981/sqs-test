@@ -5,6 +5,7 @@ namespace App\Jobs;
 use Throwable;
 use App\Models\User;
 use Illuminate\Bus\Queueable;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -34,20 +35,22 @@ class AddMultipleUsers implements ShouldQueue
      */
     public function handle()
     {
+        DB::beginTransaction();
         foreach ($this->multipleUserData as $u) {
-            sleep(2);
+            sleep(3);
             $user = new User();
             $user->name = $u['name'];
             $user->email = $u['email'];
             $user->password = $u['password'];
             $user->save();
         }
+        DB::commit();
     }
 
 
 
     public function failed(Throwable $exception)
     {
-        // Send user notification of failure, etc...
+        DB::rollBack();
     }
 }
