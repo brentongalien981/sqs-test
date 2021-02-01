@@ -13,12 +13,23 @@ class TestController extends Controller
     public function dispatchMultipleUserIds(Request $request)
     {
         $name = $request->name;
+        $name2 = $request->name2;
+
         $multipleUserData = [];
         for ($i=0; $i < 5; $i++) { 
             $multipleUserData[] = [
                 'name' => $name . $i,
                 'email' => $name . $i . '@gmail.com',
                 'password' => $name . $i . '123'
+            ];
+        }
+
+        
+        for ($i=0; $i < 5; $i++) { 
+            $multipleUserData[] = [
+                'name' => $name2 . $i,
+                'email' => $name2 . $i . '@gmail.com',
+                'password' => $name2 . $i . '123'
             ];
         }
 
