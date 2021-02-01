@@ -37,7 +37,7 @@ class AddMultipleUsers implements ShouldQueue
     {
         DB::beginTransaction();
         foreach ($this->multipleUserData as $u) {
-            sleep(5);
+            sleep(10);
             $user = new User();
             $user->name = $u['name'];
             $user->email = $u['email'];
