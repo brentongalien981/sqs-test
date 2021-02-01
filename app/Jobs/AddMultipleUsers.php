@@ -37,7 +37,7 @@ class AddMultipleUsers implements ShouldQueue
     {
         DB::beginTransaction();
         foreach ($this->multipleUserData as $u) {
-            sleep(3);
+            sleep(1);
             $user = new User();
             $user->name = $u['name'];
             $user->email = $u['email'];
@@ -51,6 +51,6 @@ class AddMultipleUsers implements ShouldQueue
 
     public function failed(Throwable $exception)
     {
-        DB::rollBack();
+        // DB::rollBack();
     }
 }
