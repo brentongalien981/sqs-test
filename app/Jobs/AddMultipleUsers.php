@@ -2,6 +2,7 @@
 
 namespace App\Jobs;
 
+use Throwable;
 use App\Models\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Queue\SerializesModels;
@@ -34,12 +35,19 @@ class AddMultipleUsers implements ShouldQueue
     public function handle()
     {
         foreach ($this->multipleUserData as $u) {
-            sleep(20);
+            // sleep(10);
             $user = new User();
             $user->name = $u['name'];
             $user->email = $u['email'];
             $user->password = $u['password'];
             $user->save();
         }
+    }
+
+
+
+    public function failed(Throwable $exception)
+    {
+        // Send user notification of failure, etc...
     }
 }

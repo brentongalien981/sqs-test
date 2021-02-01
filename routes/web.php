@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\TestRedisController;
+use App\Http\Controllers\TestDbTransactionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +17,8 @@ use App\Http\Controllers\TestRedisController;
 */
 
 
+
+Route::get('/testdbtransaction/save', [TestDbTransactionController::class, 'save']);
 
 Route::get('/nice', function () {
     return [
