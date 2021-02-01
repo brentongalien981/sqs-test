@@ -40,7 +40,8 @@ class TestController extends Controller
 
         return [
             'msg' => 'METHOD: dispatchMultipleUserIds()',
-            'data' => $multipleUserData
+            'data' => $multipleUserData,
+            'data2' => $multipleUserData2,
         ];
     }
 
