@@ -35,7 +35,7 @@ class AddMultipleUsers implements ShouldQueue
      */
     public function handle()
     {
-        // DB::beginTransaction();
+        DB::beginTransaction();
         foreach ($this->multipleUserData as $u) {
             sleep(5);
             $user = new User();
@@ -44,13 +44,13 @@ class AddMultipleUsers implements ShouldQueue
             $user->password = $u['password'];
             $user->save();
         }
-        // DB::commit();
+        DB::commit();
     }
 
 
 
     public function failed(Throwable $exception)
     {
-        // DB::rollBack();
+        DB::rollBack();
     }
 }
