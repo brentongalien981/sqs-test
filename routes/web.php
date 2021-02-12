@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\TestRedisController;
 use App\Http\Controllers\TestDbTransactionController;
+use App\Http\Controllers\TestWafController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +16,10 @@ use App\Http\Controllers\TestDbTransactionController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
+
+Route::get('/test-waf/test', [TestWafController::class, 'test']);
 
 
 
