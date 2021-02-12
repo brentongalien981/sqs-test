@@ -401,15 +401,7 @@
 <body class="antialiased">
 
     <h2>PROJECT: sqs-test</h2>
-    <h3>SERVERS:</h3>
-    <ul>
-        <li>WS1</li>
-        <li>WS2</li>
-        <li>QW1</li>
-        <li>QW2</li>
-    </ul>
-
-    <h3>Testing AWS-Elasticache-Redis as well..</h3>
+    <h3>PURPOSE: Test AWS WAF</h3>
 
     <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
         @if (Route::has('login'))
