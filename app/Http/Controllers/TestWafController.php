@@ -13,6 +13,10 @@ class TestWafController extends Controller
             'SERVER[HTTP_HOST]' => $_SERVER['HTTP_HOST'],
             'SERVER[HTTP_USER_AGENT]' => $_SERVER['HTTP_USER_AGENT'],
             'SERVER[REMOTE_ADDR]' => $_SERVER['REMOTE_ADDR'],
+            'SERVER[SERVER_ADDR]' => $_SERVER['SERVER_ADDR'],
+            'SERVER[SERVER_NAME]' => $_SERVER['SERVER_NAME'],
+            'SERVER[SERVER_SOFTWARE]' => $_SERVER['SERVER_SOFTWARE'],
+            'SERVER[SERVER_PROTOCOL]' => $_SERVER['SERVER_PROTOCOL'],
         ];
     }
 }
