@@ -19,6 +19,7 @@ class TestWafController extends Controller
             'SERVER[SERVER_NAME]' => $_SERVER['SERVER_NAME'],
             'SERVER[SERVER_SOFTWARE]' => $_SERVER['SERVER_SOFTWARE'],
             'SERVER[SERVER_PROTOCOL]' => $_SERVER['SERVER_PROTOCOL'],
+            'getallheaders' => getallheaders()
         ];
     }
 }
