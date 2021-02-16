@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\Route;
 
 
 
+Route::get('/test-waf/test', [TestWafController::class, 'test']);
+
 Route::get('/test-api-route', function () {
     return [
         'msg' => 'This is test-api-route'
