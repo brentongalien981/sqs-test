@@ -8,6 +8,7 @@ class TestWafController extends Controller
 {
     public function testDdos(Request $r)
     {
+        sleep(2);
         $theHeaders = getallheaders();
 
 
