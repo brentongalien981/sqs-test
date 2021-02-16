@@ -14,6 +14,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+
+Route::get('/test-api-route', function () {
+    return [
+        'msg' => 'This is test-api-route'
+    ];
+});
+
+
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
