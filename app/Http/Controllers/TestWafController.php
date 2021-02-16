@@ -6,7 +6,20 @@ use Illuminate\Http\Request;
 
 class TestWafController extends Controller
 {
-    public function test(Request $r) {
+    public function test2(Request $r)
+    {
+        return [
+            'msg' => 'In CLASS: TestWafController, METHOD: test2()',
+            'r->ip()' => $r->ip(),
+            // 'getallheaders' => getallheaders()
+        ];
+    }
+
+
+
+
+    public function test(Request $r)
+    {
         return [
             'msg' => 'In CLASS: TestWafController, METHOD: test()',
             'r->ip()' => $r->ip(),
