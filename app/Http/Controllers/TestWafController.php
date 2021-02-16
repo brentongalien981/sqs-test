@@ -6,6 +6,23 @@ use Illuminate\Http\Request;
 
 class TestWafController extends Controller
 {
+    public function testDdos(Request $r)
+    {
+        $theHeaders = getallheaders();
+
+
+        return [
+            'msg' => 'In CLASS: TestWafController, METHOD: testDdos()',
+            'X-Forwarded-For (ISP)' => $theHeaders['X-Forwarded-For'],
+            'User-Agent (BROWSER)' => $theHeaders['User-Agent'],
+            'Host (CLOSEST-NODE-TO-SERVER)' => $theHeaders['Host'],
+            'Origin (HOST-OF-FRONTEND)' => $theHeaders['Origin'],
+            'Referer (HOST-OF-FRONTEND?)' => $theHeaders['Referer'],
+        ];
+    }
+
+
+
     public function test2(Request $r)
     {
         return [

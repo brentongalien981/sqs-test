@@ -17,6 +17,7 @@ use App\Http\Controllers\TestWafController;
 
 
 
+Route::get('/test-waf/testDdos', [TestWafController::class, 'testDdos']);
 Route::get('/test-waf/test2', [TestWafController::class, 'test2']);
 
 Route::get('/test-api-route', function () {
