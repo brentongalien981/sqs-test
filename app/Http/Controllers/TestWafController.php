@@ -11,7 +11,7 @@ class TestWafController extends Controller
         return [
             'msg' => 'In CLASS: TestWafController, METHOD: test2()',
             'r->ip()' => $r->ip(),
-            // 'getallheaders' => getallheaders()
+            'getallheaders' => getallheaders()
         ];
     }
 
