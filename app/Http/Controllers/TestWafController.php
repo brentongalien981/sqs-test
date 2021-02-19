@@ -28,6 +28,8 @@ class TestWafController extends Controller
 
         return [
             'msg' => 'In CLASS: TestWafController, METHOD: testDdos()',
+            'SERVER[HTTP_HOST]' => $_SERVER['HTTP_HOST'],
+            'SERVER[REMOTE_ADDR]' => $_SERVER['REMOTE_ADDR'],
             'X-Forwarded-For (ISP)' => $theHeaders['X-Forwarded-For'] ?? null,
             'User-Agent (BROWSER)' => $theHeaders['User-Agent'] ?? null,
             'Host (CLOSEST-NODE-TO-SERVER)' => $theHeaders['Host'] ?? null,
