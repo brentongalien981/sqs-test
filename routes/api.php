@@ -16,7 +16,8 @@ use App\Http\Controllers\TestWafController;
 */
 
 
-
+// Route::get('/test-waf/test-max-30-request', [TestWafController::class, 'testThrottle']);
+Route::get('/test-waf/test-max-30-request', [TestWafController::class, 'testThrottle'])->middleware('throttle:30,1');
 Route::get('/test-waf/testDdos', [TestWafController::class, 'testDdos']);
 Route::get('/test-waf/test2', [TestWafController::class, 'test2']);
 

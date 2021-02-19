@@ -6,6 +6,20 @@ use Illuminate\Http\Request;
 
 class TestWafController extends Controller
 {
+    public function testThrottle(Request $r)
+    {
+        // sleep(2);
+        $theHeaders = getallheaders();
+
+
+        return [
+            'msg' => 'In CLASS: TestWafController, METHOD: testThrottle()',
+            'theHeaders' => $theHeaders,
+        ];
+    }
+
+
+
     public function testDdos(Request $r)
     {
         // sleep(2);
@@ -14,11 +28,11 @@ class TestWafController extends Controller
 
         return [
             'msg' => 'In CLASS: TestWafController, METHOD: testDdos()',
-            'X-Forwarded-For (ISP)' => $theHeaders['X-Forwarded-For'],
-            'User-Agent (BROWSER)' => $theHeaders['User-Agent'],
-            'Host (CLOSEST-NODE-TO-SERVER)' => $theHeaders['Host'],
-            'Origin (HOST-OF-FRONTEND)' => $theHeaders['Origin'],
-            'Referer (HOST-OF-FRONTEND?)' => $theHeaders['Referer'],
+            'X-Forwarded-For (ISP)' => $theHeaders['X-Forwarded-For'] ?? null,
+            'User-Agent (BROWSER)' => $theHeaders['User-Agent'] ?? null,
+            'Host (CLOSEST-NODE-TO-SERVER)' => $theHeaders['Host'] ?? null,
+            'Origin (HOST-OF-FRONTEND)' => $theHeaders['Origin'] ?? null,
+            'Referer (HOST-OF-FRONTEND?)' => $theHeaders['Referer'] ?? null,
         ];
     }
 

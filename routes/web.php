@@ -19,6 +19,7 @@ use App\Http\Controllers\TestWafController;
 
 
 
+Route::get('/test-waf/testDdos', [TestWafController::class, 'testDdos']);
 Route::get('/test-waf/test', [TestWafController::class, 'test']);
 
 
